@@ -1,0 +1,245 @@
+:root{
+    /* PRIMARY COLORS */
+
+    --very-dark-magenta:hsl(300, 43%, 22%);
+    --soft-pink:hsl(333, 80%, 67%);
+
+    /* NEUTRAL COLORS  */
+    --dark-geyish-megenta:hsl(303, 10%, 53%);
+    --light-greyish-megenta:hsl(300, 24%, 96%);
+    --white:hsl(0, 0%, 100%);
+
+    /* TYPOGRAPHY  */
+    --font-size:15px;
+    --font-style: 'Spartan', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--white);
+}
+
+.top-image{
+    position: absolute;
+    z-index: 1;
+    max-width: 2em;
+    min-height: 2em;
+}
+
+
+/* FLEX DISPLAY MULTI SELECTRS */
+
+main,
+.containers,
+.ratings,
+.card-container,
+.card,
+.profile{
+    display: flex;
+}
+
+main{
+    flex-direction:column;
+    font-family: var(--font-style);
+    margin: 1em auto;
+    min-height: 70%;
+    padding: 3% 7%;
+    position: relative;
+    max-width: 80%;
+    z-index: 2;
+}
+
+
+/* CONTAINER SECTION  */
+.containers{
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.top{
+    flex:1 1 40%;
+}
+
+.heading{
+    flex: 1 1 30%;
+    text-align: left;
+    padding: 0 2%;
+}
+
+.heading p,
+.heading h1{
+    margin:2% 2%;
+    padding-right: 15%;  /* update this side as you update the rating section    */
+}
+
+.heading h1{
+    color:var(--very-dark-magenta);    
+    font-weight: 700;
+    font-size: 4ch;                  
+}
+
+.heading p{
+    color: var(--dark-geyish-megenta);
+    font-weight: 400 ;
+}
+
+
+/* RATING SECTION  */
+
+.rating-card{
+    flex: 0 1 30%;
+}
+
+
+.ratings{
+    background-color: var(--light-greyish-megenta);
+    border-radius: 5px;
+    color: var(--very-dark-magenta);
+    flex-direction: row;
+    font-size: 0.7em;
+    font-weight: 700;  
+    padding: 3% 1%;
+    margin: 3% 2%;
+    max-width: 120%;
+    min-height: 5%;
+    position: relative;
+}
+
+.ratings p{
+    flex: 1 1 50%;
+    margin: 2%;
+}
+
+.stars{
+    flex:1 1 30%;
+    margin: 2%;
+}
+
+.rating-card :nth-child(1)
+{
+    right: 10em;
+}   
+
+.rating-card :nth-child(2)
+{
+    right: 6em;
+}
+
+.rating-card :nth-child(3)
+{
+    right: 2em;
+}
+
+
+/* BOTTOM SECTION  */
+
+.bottom {
+    flex:1 1 60%;
+}
+
+.card-container{
+    flex: 1 1 30%;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.card,
+.profile{   
+    position: relative;
+}
+
+.card{
+    background-color: var(--very-dark-magenta);
+    border-radius: 8px;
+    color: var(--white);
+    flex-direction: column;
+    margin: 0 2%;
+    width: 80%;
+}
+.profile{    
+    flex-direction: row;
+    flex: 1 1 30%;
+    margin: 2% 7%;
+    padding: 5% 0 1%;
+}
+
+.profile span{
+    color: var(--soft-pink);
+    font-size: 0.8ch;
+}
+
+.profile div{
+    margin: 5% 2%;
+}
+.profile-pic{
+    width: 15%;
+    border-radius: 50%;
+    margin: 3%;
+    padding: 2%;
+}
+
+.reviwe{
+    flex:1 1 70%;
+    font-size: 0.9ch;
+    font-weight: 500;
+    padding: 3%;
+    margin: 3% 5%;
+    text-align: left;
+    line-height: 1.5;
+}
+
+.card-container :nth-child(3)
+{
+    top: 2.5em;
+}
+
+.card-container :nth-child(2)
+{
+    top:1.5em;
+}
+
+/* MEDIA QUERY  */
+
+@media (min-width:345px) and (max-width:500px) {
+
+    body{
+        overflow: scroll;
+        height: 100vh;
+        width: 50vh;
+        /* background-color: black; */
+    }
+
+    .top-image{
+        width: 20%;
+    }
+    .containers,
+    .card-container{
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .heading p,
+    .heading h1{
+        padding:0;
+        text-align: center;
+    }
+    .rating-card{
+        min-width: 70%;
+    }
+    .ratings{
+        position: inherit;
+        flex-direction: column;
+        text-align: center;
+        margin: 2%;
+    }
+}
